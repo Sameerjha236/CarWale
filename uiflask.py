@@ -78,4 +78,4 @@ def recommend():
     return render_template('cars.html',car_name=car_name,car_price=car_price,car_brand=car_brand,car_driven=car_driven,car_fuel=car_fuel,car_year=car_year)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False,host='0.0.0.0')
