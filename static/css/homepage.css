@@ -1,0 +1,134 @@
+* {
+    size: 16px;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(240, 238, 237);
+    color: rgb(201, 44, 109);
+    font-size: 2rem;
+}
+
+h2 {
+    color: rgb(51, 44, 57);
+    font-weight: bold;
+}
+
+.navbar {
+    height: 7rem;
+    background-color: #8BF5FA;
+}
+
+#logo {
+    width: 30rem;
+    height: 4rem;
+    margin-top: 0rem;
+    margin-right: 2rem;
+}
+
+a {
+    color: rgb(201, 44, 109);
+    font-size: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 2rem;
+}
+
+.hov:hover {
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+p {
+    color: #301E67;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50rem;
+    width: 100%;
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.btn {
+    display: flex;
+    width: 15rem;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    border-radius: 4rem;
+    font-size: 3rem;
+}
+
+#buy_about {
+    background-image: url('https://www.autoinfluence.com/wp-content/uploads/2019/05/Used-Car-Dealers-Dealership-Keys.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+#sell_about {
+    background-image: url('https://thumbor.forbes.com/thumbor/fit-in/960x/https://www.forbes.com/wheels/wp-content/uploads/2022/07/SellACar_Handshake.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+#features {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding-left: 5rem;
+}
+
+#footer {
+    background-color: rgb(238, 233, 218);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 23rem;
+}
+
+#footer_sec1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+
+}

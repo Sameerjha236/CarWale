@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CarWale</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+<!--    <link rel="stylesheet" href="styles.css">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/homepage.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" id="logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/8/83/CarWale_Logo.jpg" id="logo"
+                         class="d-inline-block align-top" alt="CarWale"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="hov">Home</a></li>
+                    <li><a href="/buy" class="hov">Buy Car</a></li>
+                    <li><a href="/sell" class="hov">Sell Car</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#footer_sec1" class="hov"><span class="glyphicon glyphicon-envelope"></span> Contact Us
+                        </a></li>
+                    <li><a href="#footer_sec1" class="hov"><span class="glyphicon glyphicon-user"></span> About us </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-fluid" id="details">
+        <div class="container-fluid" id="buy_about">
+            <p>New beginnings in a car of your own</p>
+            <p>Get verified cars </p>
+            <a href=" /buy" class="btn btn-info" role="button">Buy Car</a>
+        </div>
+        <div class="container-fluid" id="sell_about">
+            <p>Sell your car for the best price</p>
+            <p>99% seller get best price for their car</p>
+            <a href="/sell" class="btn btn-info" role="button">Sell Car</a>
+        </div>
+    </div>
+
+    <div class="container-fluid " id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>100% verfied and tested cars</li>
+            <li>Get bestest Price for your car</li>
+            <li>Machine Learning Model trained on quikr data set.</li>
+        </ul>
+    </div>
+
+    <footer class="container-fluid" id="footer">
+        <div id="footer_sec1">
+            <div>
+                <h2>Carwale</h2>
+            </div>
+            <div>
+                <p>Carwale is the most trusted way of buying and selling used cars. Choose from over 5000 fully
+                    inspected
+                    second-hand car models. Select online and book a test drive at your home or at a Carwale Car Hub
+                    near
+                    you. Get a no-questions-asked 5-day money back guarantee and a free one-year comprehensive service
+                    warranty with Assured Resale Value on every Carwale Assured® car.</p>
+            </div>
+            <div>
+                <i class="fa fa-instagram">Instagram </i>
+                <i class="fa fa-facebook-square">Facebook</i>
+                <i class="fa fa-twitter-square">Twitter</i>
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+        <div id="last">
+            © 2021 Copyright:
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

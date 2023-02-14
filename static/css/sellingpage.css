@@ -1,0 +1,149 @@
+* {
+    size: 16px;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(240, 238, 237);
+    color: rgb(201, 44, 109);
+    font-size: 2rem;
+}
+
+.wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    box-shadow: 0rem 1rem 2rem rgba(0,0,0,0.1);
+    background-image: url('https://www.wisebread.com/files/fruganomics/imagecache/605x340/blog-images/man_car_money_89954227.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title-text{
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgb(51, 44, 57);
+    font-weight: bold;
+}
+
+
+.field{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+input{
+    border-radius: 1rem;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: aqua;
+    width: 25rem;
+    height: 8rem;
+    border:none;
+}
+
+.button:hover{
+   background-color: Turquoise;
+}
+
+.pbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+
+#prediction{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+.navbar {
+    height: 7rem;
+    background-color: #8BF5FA;
+}
+
+#logo {
+    width: 30rem;
+    height: 4rem;
+    margin-top: 0rem;
+    margin-right: 2rem;
+}
+
+a {
+    color: rgb(201, 44, 109);
+    font-size: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 2rem;
+}
+
+.hov:hover {
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+.btn {
+    display: flex;
+    width: 15rem;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    border-radius: 4rem;
+    font-size: 3rem;
+}
+
+#footer {
+    background-color: rgb(238, 233, 218);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 23rem;
+}
+
+#footer_sec1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CarWale</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/sellingpage.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" id="logo"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/8/83/CarWale_Logo.jpg" id="logo"
+                        class="d-inline-block align-top" alt="CarWale"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="hov">Home</a></li>
+                    <li><a href="/buy" class="hov">Buy Car</a></li>
+                    <li><a href="/sell" class="hov">Sell Car</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#footer_sec1" class="hov"><span class="glyphicon glyphicon-envelope"></span> Contact Us
+                        </a></li>
+                    <li><a href="#footer_sec1" class="hov"><span class="glyphicon glyphicon-user"></span> About us </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid wrapper">
+        <div class="title-text">Check your car's price in 10 secs</div>
+        <div class="form-container">
+            <form method="post" accept-charset="utf-8" id="Modelform">
+                <div class="field">
+                    <p class="sub-head">Select the company:</p>
+                    <select class="select picker form-control" id="company" name="company" required="1"
+                        onchange="load_car_models(this.id,'car_models')">
+                        {% for company in companies %}
+                        <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="field">
+                    <p class="sub-head">Select the model:</p>
+                    <select class="select picker form-control" id="car_models" name="car_models" required="1">
+                    </select>
+                </div>
+                <div class="field">
+                    <p class="sub-head">Select Year of Purchase: </p>
+                    <select class="select picker form-control" id="year" name="year" required="1">
+                        {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="field">
+                    <p class="sub-head">Select the Fuel Type:</b> </p>
+                    <select class="select picker form-control" id="fuel_type" name="fuel_type" required="1">
+                        {% for fuel in fuel_types %}
+                        <option value="{{ fuel }}">{{ fuel }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="field">
+                    <p class="sub-head">Enter the Number of Kilometres that the car has travelled:</p>
+                    <input type="text" class="form-control" id="kilo_driven" name="kilo_driven"
+                        value="0" placeholder="Enter the kilometres driven ">
+                </div>
+                <div class="pbtn">
+                    <button class="button" onclick="send_data()">Predict Price</button>
+                </div>
+            </form>
+            <div id="prediction"></div>
+        </div>
+    </div>
+
+    <footer class="container-fluid" id="footer">
+        <div id="footer_sec1">
+            <div>
+                <h2>Carwale</h2>
+            </div>
+            <div>
+                <p>Carwale is the most trusted way of buying and selling used cars. Choose from over 5000 fully
+                    inspected
+                    second-hand car models. Select online and book a test drive at your home or at a Carwale Car Hub
+                    near
+                    you. Get a no-questions-asked 5-day money back guarantee and a free one-year comprehensive service
+                    warranty with Assured Resale Value on every Carwale Assured® car.</p>
+            </div>
+            <div>
+                <i class="fa fa-instagram">Instagram </i>
+                <i class="fa fa-facebook-square">Facebook</i>
+                <i class="fa fa-twitter-square">Twitter</i>
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+        <div id="last">
+            © 2021 Copyright:
+        </div>
+    </footer>
+<script>
+
+        function load_car_models(company_id, car_model_id) {
+            var company = document.getElementById(company_id);
+            var car_model = document.getElementById(car_model_id);
+<!--            console.log(company.value);-->
+            car_model.value = "";
+            car_model.innerHTML = "";
+            {% for company in companies %}
+            if (company.value == "{{ company }}") {
+                {% for model in car_models %}
+                {% if company in model %}
+
+                var newOption = document.createElement("option");
+                newOption.value = "{{ model }}";
+                newOption.innerHTML = "{{ model }}";
+                car_model.options.add(newOption);
+                {% endif %}
+                {% endfor %}
+            }
+            {% endfor %}
+        }
+
+        function form_handler(event) {
+            event.preventDefault(); // Don't submit the form normally
+        }
+
+
+
+        function send_data() {
+            document.querySelector('form').addEventListener("submit", form_handler);
+
+            var fd = new FormData(document.querySelector('form'));
+
+            var xhr = new XMLHttpRequest({ mozSystem: true });
+
+            xhr.open('POST', '/predict', true);
+            document.getElementById('prediction').innerHTML = "Wait! Predicting Price.....";
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    document.getElementById('prediction').innerHTML = "Best Price For Your Car is ₹" + xhr.responseText;
+                }
+            };
+
+            xhr.onload = function () { };
+
+            xhr.send(fd);
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
