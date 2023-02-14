@@ -5,6 +5,7 @@ Carwale is a web app that offers personalized car recommendations and price pred
 ## ScreenShots
 ### Home Page
 <img width="1411" alt="image" src="https://user-images.githubusercontent.com/90266216/218820683-2ea0b519-e82c-4533-98c1-686188d65264.png">
+
 ### Buy Page
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/90266216/218820887-bdcc8796-f77b-411e-896a-f62092c90a8b.png">
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/90266216/218821009-25cb2b9e-aaf5-4f0d-af32-aff0f4824a3d.png">
